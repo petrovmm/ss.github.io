@@ -1,10 +1,10 @@
-- name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
+- name: clone-repository
   uses: GuillaumeFalourd/clone-github-repo-action@v2
   with:
     owner: 'GuillaumeFalourd'
     repository: 'poc-github-actions'
 
-- name: Run Databicks Notebooks GitHub Install Library Action Demo 
+- name: Run-Install-Library-Action 
   on: 
   push:
     branches: 
@@ -24,7 +24,7 @@
         databrick-libraries: ' XXXX.whl  YYYY.whl ZZZ.whl'
         databrick-dbfs-path: 'dbfs:/mnt/XXXX/ '
         
-- name: Build LaTeX document
+- name: Build-LaTeX-document
   on: [push]
   jobs:
   build_latex:
@@ -38,7 +38,7 @@
           root_file: main.tex
     
     
-- name: Push to Github pages
+- name: Push-to-Github-pages
   on: [push]
   jobs:
     Explore-GitHub-Actions:
