@@ -1,0 +1,19 @@
+name: Run Databicks Notebooks GitHub Install Library Action Demo 
+on: 
+  push:
+    branches: 
+      - master 
+jobs:
+  build-and-deploy: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Install WHL to the cluster
+      uses: Herman-Wu/databrick-install-lib-action@master
+      with:
+        databrick-server-uri: 'https://XXXX.XX.azuredatabricks.net'
+        databrick-token: ' <databrick-token> '
+        databrick-cluster-id: ' < databrick-cluster-id >'
+        databrick-libraries: ' XXXX.whl  YYYY.whl ZZZ.whl'
+        databrick-dbfs-path: 'dbfs:/mnt/XXXX/ '
